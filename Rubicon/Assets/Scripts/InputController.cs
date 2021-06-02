@@ -6,6 +6,9 @@ public class InputController : MonoBehaviour
 {
     public Animator anim;
 
+    public Unit enemyUnit;
+    public Unit playerUnit;
+
     void Update()
     {
 
@@ -17,6 +20,7 @@ public class InputController : MonoBehaviour
     public void Swing()
     {
         anim.SetTrigger("Swing");
+        enemyUnit.currentHealth -= playerUnit.damage;
     }
     public void Defend()
     {
