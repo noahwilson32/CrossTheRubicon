@@ -16,6 +16,7 @@ public class InputController : MonoBehaviour
     public void Kick()
     {
         anim.SetTrigger("Kick");
+        enemyUnit.currentHealth -= playerUnit.damage / 2;
     }
     public void Swing()
     {

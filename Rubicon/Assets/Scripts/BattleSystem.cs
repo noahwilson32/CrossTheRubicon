@@ -10,11 +10,10 @@ public class BattleSystem : MonoBehaviour
     public GameObject playerPrefab;
     public GameObject enemyPrefab;
 
-    public Transform playerPlatform;
-    public Transform enemyPlatform;
-
     private Unit playerUnit;
     private Unit enemyUnit;
+
+    public InputController myInput;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,16 +21,14 @@ public class BattleSystem : MonoBehaviour
         SetUpBattle();
     }
 
+    public void SetUpBattle()
+    {
+        Unit playerUnit = playerPrefab.GetComponent<Unit>();
+        Unit enemyUnit = enemyPrefab.GetComponent<Unit>();
+    }
     // Update is called once per frame
     void Update()
     {
         
-    }
-    public void SetUpBattle()
-    {
-        GameObject playerGO = Instantiate(playerPrefab, playerPlatform);
-        playerUnit = playerGO.GetComponent<Unit>();
-        GameObject enemyGO = Instantiate(enemyPrefab, enemyPlatform);
-        enemyUnit = enemyGO.GetComponent<Unit>();
     }
 }
