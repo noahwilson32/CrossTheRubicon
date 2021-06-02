@@ -368,7 +368,7 @@ GameObject:
   - component: {fileID: 273098858}
   m_Layer: 5
   m_Name: Swing
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -856,7 +856,7 @@ GameObject:
   - component: {fileID: 499749946}
   m_Layer: 5
   m_Name: Defend
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1105,7 +1105,7 @@ GameObject:
   - component: {fileID: 605074557}
   m_Layer: 5
   m_Name: Pray
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1820,8 +1820,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  playerPrefab: {fileID: 732563484058345253}
-  enemyPrefab: {fileID: 5502163325395734059}
+  playerUnit: {fileID: 732563484058345249}
+  enemyUnit: {fileID: 5502163325395734062}
   myInput: {fileID: 1508291116}
 --- !u!4 &1213502129
 Transform:
@@ -2381,7 +2381,7 @@ GameObject:
   - component: {fileID: 1969397262}
   m_Layer: 5
   m_Name: Kick
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

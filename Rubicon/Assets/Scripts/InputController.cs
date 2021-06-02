@@ -9,6 +9,8 @@ public class InputController : MonoBehaviour
     public Unit enemyUnit;
     public Unit playerUnit;
 
+    public static bool isEnemyTurn = false;
+
     void Update()
     {
 
@@ -17,14 +19,17 @@ public class InputController : MonoBehaviour
     {
         anim.SetTrigger("Kick");
         enemyUnit.currentHealth -= playerUnit.damage / 2;
+        isEnemyTurn = true;
     }
     public void Swing()
     {
         anim.SetTrigger("Swing");
         enemyUnit.currentHealth -= playerUnit.damage;
+        isEnemyTurn = true;
     }
     public void Defend()
     {
         anim.SetTrigger("Defend");
+        isEnemyTurn = true;
     }
 }
