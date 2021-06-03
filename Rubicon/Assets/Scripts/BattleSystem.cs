@@ -14,6 +14,8 @@ public class BattleSystem : MonoBehaviour
     public InputController myInput;
 
     public bool isEnemyAttacking;
+
+    public Animator anim;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +34,7 @@ public class BattleSystem : MonoBehaviour
         if (InputController.isPressed)
         {
             isEnemyAttacking = true;
+            anim.SetTrigger("isDamaged");
         }
     }
     IEnumerator EnemyTurn()
@@ -44,6 +47,7 @@ public class BattleSystem : MonoBehaviour
         }
         isEnemyAttacking = false;
         yield return new WaitForSeconds(1f);
+        anim.SetTrigger("isAttacking");
         playerUnit.currentHealth -= enemyUnit.damage;
 
         

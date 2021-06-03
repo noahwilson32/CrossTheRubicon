@@ -32,4 +32,9 @@ public class InputController : MonoBehaviour
         anim.SetTrigger("Defend");
         isPressed = true;
     }
+    public void Pray()
+    {
+        anim.SetTrigger("Pray");
+        isPressed = true;
+    }
 }

@@ -1172,7 +1172,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 605074558}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1508291116}
+        m_MethodName: Pray
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &605074558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1824,6 +1835,7 @@ MonoBehaviour:
   enemyUnit: {fileID: 5502163325395734062}
   myInput: {fileID: 1508291116}
   isEnemyAttacking: 0
+  anim: {fileID: 5502163325395734060}
 --- !u!4 &1213502129
 Transform:
   m_ObjectHideFlags: 0
@@ -2033,7 +2045,8 @@ MonoBehaviour:
   enemyHealth: {fileID: 5502163325395734062}
   playerSlider: {fileID: 1193011926}
   enemySlider: {fileID: 446891012}
-  nameText: {fileID: 469845035}
+  enemyNameText: {fileID: 469845035}
+  playerNameText: {fileID: 313379682}
 --- !u!1 &1505647018
 GameObject:
   m_ObjectHideFlags: 0
@@ -2932,6 +2945,7 @@ GameObject:
   - component: {fileID: 5502163325395734057}
   - component: {fileID: 5502163325395734056}
   - component: {fileID: 5502163325395734062}
+  - component: {fileID: 5502163325395734060}
   m_Layer: 0
   m_Name: Lion
   m_TagString: Untagged
@@ -2939,6 +2953,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &5502163325395734060
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5502163325395734059}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1ece9b92368cf00428a07fee04807388, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &5502163325395734062
 MonoBehaviour:
   m_ObjectHideFlags: 0
