@@ -10,6 +10,8 @@ public class HealthBarController : MonoBehaviour
 
     public Slider playerSlider;
     public Slider enemySlider;
+
+    public Text nameText;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,5 +24,6 @@ public class HealthBarController : MonoBehaviour
     {
         playerSlider.value = playerHealth.currentHealth;
         enemySlider.value = enemyHealth.currentHealth;
+        nameText.text = enemyHealth.unitName;
     }
 }

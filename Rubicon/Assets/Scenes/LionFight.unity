@@ -1823,6 +1823,7 @@ MonoBehaviour:
   playerUnit: {fileID: 732563484058345249}
   enemyUnit: {fileID: 5502163325395734062}
   myInput: {fileID: 1508291116}
+  isEnemyAttacking: 0
 --- !u!4 &1213502129
 Transform:
   m_ObjectHideFlags: 0
@@ -2032,6 +2033,7 @@ MonoBehaviour:
   enemyHealth: {fileID: 5502163325395734062}
   playerSlider: {fileID: 1193011926}
   enemySlider: {fileID: 446891012}
+  nameText: {fileID: 469845035}
 --- !u!1 &1505647018
 GameObject:
   m_ObjectHideFlags: 0

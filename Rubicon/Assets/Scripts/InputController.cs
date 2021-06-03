@@ -9,7 +9,7 @@ public class InputController : MonoBehaviour
     public Unit enemyUnit;
     public Unit playerUnit;
 
-    public static bool isEnemyTurn = false;
+    public static bool isPressed = false;
 
     void Update()
     {
@@ -19,17 +19,17 @@ public class InputController : MonoBehaviour
     {
         anim.SetTrigger("Kick");
         enemyUnit.currentHealth -= playerUnit.damage / 2;
-        isEnemyTurn = true;
+        isPressed = true;
     }
     public void Swing()
     {
         anim.SetTrigger("Swing");
         enemyUnit.currentHealth -= playerUnit.damage;
-        isEnemyTurn = true;
+        isPressed = true;
     }
     public void Defend()
     {
         anim.SetTrigger("Defend");
-        isEnemyTurn = true;
+        isPressed = true;
     }
 }

@@ -12,36 +12,49 @@ public class BattleSystem : MonoBehaviour
     public Unit enemyUnit;
 
     public InputController myInput;
+
+    public bool isEnemyAttacking;
     // Start is called before the first frame update
     void Start()
     {
         state = StateSystem.START;
+        isEnemyAttacking = false;
     }
 
     public void PlayerTurn()
     {
+        isEnemyAttacking = false;
         GameObject[] buttons = GameObject.FindGameObjectsWithTag("Button");
         foreach(GameObject button in buttons)
         {
             button.GetComponent<Button>().interactable = true;
         }
+        if (InputController.isPressed)
+        {
+            isEnemyAttacking = true;
+        }
     }
-    public void EnemyTurn()
+    IEnumerator EnemyTurn()
     {
+        isEnemyAttacking = true;
         GameObject[] buttons = GameObject.FindGameObjectsWithTag("Button");
         foreach(GameObject button in buttons)
         {
             button.GetComponent<Button>().interactable = false;
         }
+        isEnemyAttacking = false;
+        yield return new WaitForSeconds(1f);
         playerUnit.currentHealth -= enemyUnit.damage;
-        InputController.isEnemyTurn = false;
+
+        
     }
     // Update is called once per frame
     void Update()
     {
-        if (InputController.isEnemyTurn)
+        if (isEnemyAttacking)
         {
-            EnemyTurn();
+            InputController.isPressed = false;
+            StartCoroutine(EnemyTurn());
         }
         else
         {
