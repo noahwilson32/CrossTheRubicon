@@ -1834,7 +1834,6 @@ MonoBehaviour:
   playerUnit: {fileID: 732563484058345249}
   enemyUnit: {fileID: 5502163325395734062}
   myInput: {fileID: 1508291116}
-  isEnemyAttacking: 0
   anim: {fileID: 5502163325395734060}
 --- !u!4 &1213502129
 Transform:
@@ -2766,6 +2765,7 @@ MonoBehaviour:
   maxHealth: 50
   currentHealth: 50
   damage: 5
+  maxDamage: 5
 --- !u!95 &732563484058345252
 Animator:
   serializedVersion: 3
@@ -2988,3 +2988,4 @@ MonoBehaviour:
   maxHealth: 25
   currentHealth: 25
   damage: 5
+  maxDamage: 5

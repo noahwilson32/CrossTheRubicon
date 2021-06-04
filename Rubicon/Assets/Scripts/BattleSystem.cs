@@ -13,7 +13,7 @@ public class BattleSystem : MonoBehaviour
 
     public InputController myInput;
 
-    public bool isEnemyAttacking;
+    public static bool isEnemyAttacking;
 
     public Animator anim;
     // Start is called before the first frame update
