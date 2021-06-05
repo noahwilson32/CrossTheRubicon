@@ -13,11 +13,14 @@ public class HealthBarController : MonoBehaviour
 
     public Text enemyNameText;
     public Text playerNameText;
+
+    public Text playerDamageText;
     // Start is called before the first frame update
     void Start()
     {
         playerSlider.maxValue = playerHealth.maxHealth;
         enemySlider.maxValue = enemyHealth.maxHealth;
+        playerDamageText.enabled = false;
     }
 
     // Update is called once per frame
@@ -25,7 +28,10 @@ public class HealthBarController : MonoBehaviour
     {
         playerSlider.value = playerHealth.currentHealth;
         enemySlider.value = enemyHealth.currentHealth;
+
         enemyNameText.text = enemyHealth.unitName;
         playerNameText.text = playerHealth.unitName;
+
+        playerDamageText.text = enemyHealth.damage.ToString();
     }
 }

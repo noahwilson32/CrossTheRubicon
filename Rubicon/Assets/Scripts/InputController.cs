@@ -40,7 +40,7 @@ public class InputController : MonoBehaviour
         isPressed = true;
         if (isDefending)
         {
-            enemyUnit.damage = enemyUnit.damage / 2;
+            enemyUnit.damage = enemyUnit.maxDamage / 2;
         }
         if (!isDefending)
         {
