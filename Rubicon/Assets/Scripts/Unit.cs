@@ -7,6 +7,7 @@ public class Unit : MonoBehaviour
     public string unitName;
     public int maxHealth;
     public int currentHealth;
+    public int changedHealth;
     public int damage;
     public int maxDamage;
 }
