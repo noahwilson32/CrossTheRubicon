@@ -14,16 +14,16 @@ public class HealthBarController : MonoBehaviour
     public Text enemyNameText;
     public Text playerNameText;
 
-    public Text playerDamageText;
-    public GameObject playerDamageTextGO;
+    public Text infoDisplayText;
 
-    public Transform spawnPlayerDamage;
     // Start is called before the first frame update
     void Start()
     {
         playerSlider.maxValue = playerHealth.maxHealth;
         enemySlider.maxValue = enemyHealth.maxHealth;
         playerHealth.changedHealth = playerHealth.maxHealth;
+
+        infoDisplayText.text = "The imfamous lion, a worthy \n opponent for a feirce gladiator \n strong but unfavored by the gods";
     }
 
     // Update is called once per frame
@@ -34,17 +34,20 @@ public class HealthBarController : MonoBehaviour
 
         enemyNameText.text = enemyHealth.unitName;
         playerNameText.text = playerHealth.unitName;
-        if(playerHealth.currentHealth < playerHealth.changedHealth)
+
+        if (InputController.isPressed)
         {
-            GameObject pdt = Instantiate(playerDamageTextGO,spawnPlayerDamage);
-            Destroy(pdt, 1f);
-            StartCoroutine(ChangedHealth());
+            infoDisplayText.text = playerHealth.unitName + " Deals " + playerHealth.damage.ToString() + " Damage To " + enemyHealth.unitName;
         }
+        StartCoroutine(DisPlayInfo());
     }
-    IEnumerator ChangedHealth()
+    IEnumerator DisPlayInfo()
     {
-        yield return new WaitForSeconds(.0001f);
-        playerHealth.changedHealth = playerHealth.currentHealth;
+        yield return new WaitForSeconds(1.5f);
+        if (BattleSystem.isEnemyAttacking)
+        {
+            infoDisplayText.text = enemyHealth.unitName + " Deals " + enemyHealth.damage.ToString() + " Damage To " + playerHealth.unitName;
+        }
     }
 
 }

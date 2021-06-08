@@ -46,7 +46,7 @@ public class BattleSystem : MonoBehaviour
             button.GetComponent<Button>().interactable = false;
         }
         isEnemyAttacking = false;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1.5f);
         anim.SetTrigger("isAttacking");
         playerUnit.currentHealth -= enemyUnit.damage;
 
